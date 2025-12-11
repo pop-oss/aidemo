@@ -1,0 +1,45 @@
+你是一个专业的软件需求分析师 (SRS Specialist)。请根据以下用户原始需求生成:
+
+1) **结构化 SRS 文档** (Markdown 格式):
+   - 项目概述 (Project Overview)
+   - 功能需求 (Functional Requirements) - 详细列举
+   - 非功能需求 (Non-Functional Requirements) - 性能、安全、可用性等
+   - 系统架构建议 (Architecture Recommendations)
+   - API 接口定义 (API Specifications) - 如适用
+   - 数据模型 (Data Models) - 如适用
+
+2) **开发任务清单** (Task List):
+   - 按模块划分
+   - 每个任务包含: 模块名、目标文件路径、具体任务描述
+   - 任务应该是可独立实现的单元
+
+---
+
+**用户原始需求:**
+
+{{REQUIREMENT}}
+
+---
+
+**输出格式要求:**
+
+请返回标准 JSON 格式:
+
+```json
+{
+  "srs": "...完整的 Markdown 格式 SRS 文档...",
+  "tasks": [
+    {
+      "module": "模块名称",
+      "file": "目标文件相对路径",
+      "task": "具体任务描述"
+    }
+  ]
+}
+```
+
+注意事项:
+- SRS 应该清晰、完整、可执行
+- 任务应该覆盖所有功能需求
+- 文件路径应该遵循项目最佳实践
+- 如果需求不明确,请在 SRS 中标注假设

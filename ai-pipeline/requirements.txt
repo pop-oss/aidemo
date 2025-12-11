@@ -1,0 +1,7 @@
+openai
+requests
+PyYAML
+pytest
+GitPython
+Flask
+anthropic
