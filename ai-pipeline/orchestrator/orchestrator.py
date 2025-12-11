@@ -6,6 +6,10 @@ import os
 import re
 import tempfile
 from typing import List, Tuple, Optional, Dict
+# 加载 .env 文件中的环境变量
+from dotenv import load_dotenv
+load_dotenv()
+
 from llm_client import LLMClient
 from utils import (
     write_files_from_codeblock,

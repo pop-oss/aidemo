@@ -5,3 +5,4 @@ pytest
 GitPython
 Flask
 anthropic
+python-dotenv

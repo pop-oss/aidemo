@@ -69,7 +69,13 @@ class LLMClient:
                     max_tokens=max_tokens,
                     temperature=0.7,
                 )
-                return response.choices[0].message.content
+                # 兼容不同响应格式
+                if isinstance(response, str):
+                    return response
+                elif hasattr(response, 'choices'):
+                    return response.choices[0].message.content
+                else:
+                    return str(response)
             except Exception as e:
                 raise RuntimeError(f'OpenAI API 调用失败: {str(e)}')
         else:
@@ -123,7 +129,13 @@ class LLMClient:
                     max_tokens=max_tokens,
                     temperature=0.7,
                 )
-                return response.choices[0].message.content
+                # 兼容不同响应格式
+                if isinstance(response, str):
+                    return response
+                elif hasattr(response, 'choices'):
+                    return response.choices[0].message.content
+                else:
+                    return str(response)
             except Exception as e:
                 raise RuntimeError(f'OpenAI API 调用失败: {str(e)}')
         else:
